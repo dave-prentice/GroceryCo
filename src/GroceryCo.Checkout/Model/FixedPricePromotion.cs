@@ -3,6 +3,10 @@ using System.Security.Policy;
 
 namespace GroceryCo.Checkout.Model
 {
+    /// <summary>
+    /// A promotion representing a fixed price for a quantity of <see cref="GroceryItem"/>
+    /// for example a promotion which may be stated as "Three for $2.00"
+    /// </summary>
     internal sealed class FixedPricePromotion : IPromotion
     {
         /// <summary>

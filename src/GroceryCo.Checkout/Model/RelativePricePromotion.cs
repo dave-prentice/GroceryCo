@@ -3,6 +3,8 @@
     /// <summary>
     /// Represents a promotion where the total price of a given
     /// quantity of items is a function of that quantity and price of the item
+    /// For example "Buy one get one free" indicates that if you buy two items
+    /// the cost will be 50% of the expected total.
     /// </summary>
     internal sealed class RelativePricePromotion : IPromotion
     {
@@ -18,6 +20,7 @@
             _rate = rate;
             Item = groceryItem;
         }
+
 
         /// <summary>
         /// The item under promotion
