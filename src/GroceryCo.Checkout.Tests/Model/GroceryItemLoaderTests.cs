@@ -27,8 +27,8 @@ namespace GroceryCo.Checkout.Tests.Model
         }
 
 
-        private const string ValidItemsJson = "[{id: 'Apple', price: 0.50}, {id: 'Orange', price: 1.0}]";
+        private const string ValidItemsJson = "[{'id': 'Apple', 'price': 0.50}, {id: 'Orange', 'price': 1.0}]";
 
-        private const string InvalidItemsJson = "{foo: 'bar'}";
+        private const string InvalidItemsJson = "{'foo': 'bar'}";
     }
 }
