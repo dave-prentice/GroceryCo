@@ -50,8 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\FixedPricePromotion.cs" />
     <Compile Include="Model\GroceryItem.cs" />
     <Compile Include="Model\GroceryItemLoader.cs" />
+    <Compile Include="Model\IPromotion.cs" />
+    <Compile Include="Model\PromotionLoader.cs" />
+    <Compile Include="Model\PromotionPoco.cs" />
+    <Compile Include="Model\PromotionType.cs" />
+    <Compile Include="Model\RelativePricePromotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
