@@ -1,5 +1,7 @@
 #GroceryCo Grocery Store Checkout Sample
 
+This sample application simulates a grocery store checkout.
+
 By convention the checkout sample application attempts to load three JSON files on startup:
 
 GroceryItems.json - a list of all items in stock at the shop.
