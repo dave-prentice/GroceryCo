@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using GroceryCo.Checkout.Loaders;
 using GroceryCo.Checkout.Model;
 using Newtonsoft.Json;
 using NUnit.Framework;

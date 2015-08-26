@@ -51,12 +51,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CashRegister\CashRegister.cs" />
+    <Compile Include="Model\BasketItem.cs" />
+    <Compile Include="Loaders\BasketItemLoader.cs" />
     <Compile Include="Model\FixedPricePromotion.cs" />
     <Compile Include="Model\GroceryItem.cs" />
-    <Compile Include="Model\GroceryItemLoader.cs" />
+    <Compile Include="Loaders\GroceryItemLoader.cs" />
     <Compile Include="Model\IPromotion.cs" />
-    <Compile Include="Model\PromotionLoader.cs" />
-    <Compile Include="Model\PromotionPoco.cs" />
+    <Compile Include="Loaders\PromotionLoader.cs" />
     <Compile Include="Model\PromotionType.cs" />
     <Compile Include="Model\ReceiptEntry.cs" />
     <Compile Include="Model\RelativePricePromotion.cs" />

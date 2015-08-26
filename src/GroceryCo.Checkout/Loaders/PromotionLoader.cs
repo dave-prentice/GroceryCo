@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using GroceryCo.Checkout.Model;
 using Newtonsoft.Json;
 
-namespace GroceryCo.Checkout.Model
+namespace GroceryCo.Checkout.Loaders
 {
     /// <summary>
     /// Loads promotions from a JSON representation
@@ -44,6 +45,36 @@ namespace GroceryCo.Checkout.Model
             };
 
             return promotions.Select(promotionFactory);
+        }
+
+
+        /// <summary>
+        /// POCO class for the deserialization of Promotions
+        /// </summary>
+        internal sealed class PromotionPoco
+        {
+            /// <summary>
+            /// The quantity of <see cref="GroceryItem"/> required to qualify for the promotion
+            /// </summary>
+            public int Quantity { get; set; }
+
+
+            /// <summary>
+            /// The Id of the item to which the promotion applies
+            /// </summary>
+            public string ItemId { get; set; }
+
+
+            /// <summary>
+            /// The price of Quantity items given the prevailing promotion type
+            /// </summary>
+            public decimal Rate { get; set; }
+
+
+            /// <summary>
+            /// The <see cref="PromotionType"/> (fixed or variable) of the given promotion
+            /// </summary>
+            public PromotionType PromotionType { get; set; }
         }
     }
 }
