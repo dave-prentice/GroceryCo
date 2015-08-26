@@ -45,7 +45,6 @@ namespace GroceryCo.Checkout.Tests.CashRegister
         }
 
 
-
         [TestCaseSource(nameof(TestData))]
         public static void Process_OneItemTypeOnePromotion_CorrectReceiptEntriesMade(
             string itemId,
