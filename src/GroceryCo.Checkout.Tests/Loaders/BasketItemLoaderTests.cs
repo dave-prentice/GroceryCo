@@ -10,8 +10,10 @@ namespace GroceryCo.Checkout.Tests.Loaders
         [Test]
         public static void Load_ValidJson_Succeeds()
         {
+            // Arrange + Act
             var items = BasketItemLoader.Load(ValidBasketJson);
 
+            // Assert
             Assert.That(items.Count(), Is.EqualTo(3));
         }
 
