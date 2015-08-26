@@ -17,10 +17,10 @@ namespace GroceryCo.Checkout.Tests.CashRegister
             var register = new Checkout.CashRegister.CashRegister(Enumerable.Empty<IPromotion>());
             var groceryItems = new[]
             {
-                new GroceryItem {Id = "Apples", Price = 1.0m},
-                new GroceryItem {Id = "Apples", Price = 1.0m},
-                new GroceryItem {Id = "Oranges", Price = 2.0m},
-                new GroceryItem {Id = "Oranges", Price = 2.0m},
+                new GroceryItem("Apples", 1.0m),
+                new GroceryItem("Apples", 1.0m),
+                new GroceryItem("Oranges", 2.0m),
+                new GroceryItem("Oranges", 2.0m),
             };
 
             // Act
@@ -150,7 +150,7 @@ namespace GroceryCo.Checkout.Tests.CashRegister
         /// <returns></returns>
         private static GroceryItem GetItem(string itemId, decimal unitPrice)
         {
-            return new GroceryItem { Id = itemId, Price = unitPrice };
+            return new GroceryItem(itemId, unitPrice);
         }
     }
 }

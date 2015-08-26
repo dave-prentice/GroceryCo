@@ -29,7 +29,7 @@ namespace GroceryCo.Checkout.Tests.Model
         }
 
 
-        private static readonly GroceryItem TestItem = new GroceryItem {Id = "Apples", Price = 1.0m};
+        private static readonly GroceryItem TestItem = new GroceryItem("Apples", 1.0m);
 
 
         private static readonly TestCaseData[] TestCases = new []

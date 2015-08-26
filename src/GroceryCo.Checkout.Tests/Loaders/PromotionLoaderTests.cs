@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GroceryCo.Checkout.Loaders;
 using GroceryCo.Checkout.Model;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
-namespace GroceryCo.Checkout.Tests.Model
+namespace GroceryCo.Checkout.Tests.Loaders
 {
     internal static class PromotionLoaderTests
     {
@@ -37,7 +38,7 @@ namespace GroceryCo.Checkout.Tests.Model
         {
             {
                 "Apple",
-                new GroceryItem {Id = "Apple", Price = 1.0m}
+                new GroceryItem("Apple", 1.0m)
             }
         };
 

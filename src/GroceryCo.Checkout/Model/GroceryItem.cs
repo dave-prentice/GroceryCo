@@ -1,19 +1,31 @@
 ﻿namespace GroceryCo.Checkout.Model
 {
     /// <summary>
-    /// Poco for a grocery item
+    /// Represents an item in stock in the grocery store
     /// </summary>
     public sealed class GroceryItem
     {
         /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="price"></param>
+        public GroceryItem(string id, decimal price)
+        {
+            Id = id;
+            Price = price;
+        }
+
+
+        /// <summary>
         /// The unique ID for the grocery item
         /// </summary>
-        public string Id { get; set; }
+        public string Id { get; }
 
 
         /// <summary>
         /// The unit price for one Item
         /// </summary>
-        public decimal Price { get; set; }
+        public decimal Price { get; }
     }
 }
