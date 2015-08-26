@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CashRegister\CashRegisterTests.cs" />
     <Compile Include="Model\FixedPricePromotionTests.cs" />
     <Compile Include="Model\GroceryItemLoaderTests.cs" />
     <Compile Include="Model\PromotionLoaderTests.cs" />

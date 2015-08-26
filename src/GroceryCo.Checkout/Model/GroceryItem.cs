@@ -3,7 +3,7 @@
     /// <summary>
     /// Poco for a grocery item
     /// </summary>
-    internal sealed class GroceryItem
+    public sealed class GroceryItem
     {
         /// <summary>
         /// The unique ID for the grocery item

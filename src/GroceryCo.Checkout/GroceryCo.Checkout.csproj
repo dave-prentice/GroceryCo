@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CashRegister\CashRegister.cs" />
     <Compile Include="Model\FixedPricePromotion.cs" />
     <Compile Include="Model\GroceryItem.cs" />
     <Compile Include="Model\GroceryItemLoader.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Model\PromotionLoader.cs" />
     <Compile Include="Model\PromotionPoco.cs" />
     <Compile Include="Model\PromotionType.cs" />
+    <Compile Include="Model\ReceiptEntry.cs" />
     <Compile Include="Model\RelativePricePromotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +66,7 @@
     <None Include="GroceryCo.snk" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
