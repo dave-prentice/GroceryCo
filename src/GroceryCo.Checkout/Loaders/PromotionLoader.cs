@@ -9,7 +9,7 @@ namespace GroceryCo.Checkout.Loaders
     /// <summary>
     /// Loads promotions from a JSON representation
     /// </summary>
-    internal static class PromotionLoader
+    public static class PromotionLoader
     {
         /// <summary>
         /// Loads all promotions from the given JSON text
@@ -19,7 +19,7 @@ namespace GroceryCo.Checkout.Loaders
         /// <returns>A sequence of promotions thatthe store is currently offering</returns>
         public static IEnumerable<IPromotion> Load(string jsonPromotions, IDictionary<string, GroceryItem> stockItems)
         {
-            var promotions = JsonConvert.DeserializeObject<PromotionPoco[]>(jsonPromotions);
+            var promotions = JsonConvert.DeserializeObject<PromotionPoco[]>(jsonPromotions) ?? Enumerable.Empty<PromotionPoco>();
 
             Func<PromotionPoco, IPromotion> promotionFactory = p =>
             {

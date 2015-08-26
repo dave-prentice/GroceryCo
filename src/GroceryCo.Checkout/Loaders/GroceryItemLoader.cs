@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace GroceryCo.Checkout.Loaders
 {
-    internal static class GroceryItemLoader
+    public static class GroceryItemLoader
     {
         /// <summary>
         /// Loads the currently available stock items from a JSON string representation

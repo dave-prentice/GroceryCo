@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{21F350DC-95C5-4584-9954-6776C3943BD4}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{DD35D93F-C7BA-42F6-957A-A559A3FA5B4A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GroceryCo.Checkout.Tests</RootNamespace>
-    <AssemblyName>GroceryCo.Checkout.Tests</AssemblyName>
+    <RootNamespace>GroceryCo.Console</RootNamespace>
+    <AssemblyName>GroceryCo.Console</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -36,14 +39,6 @@
     <AssemblyOriginatorKeyFile>..\..\GroceryCo.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,23 +49,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CashRegister\CashRegisterTests.cs" />
-    <Compile Include="Loaders\BasketItemLoaderTests.cs" />
-    <Compile Include="Model\FixedPricePromotionTests.cs" />
-    <Compile Include="Loaders\GroceryItemLoaderTests.cs" />
-    <Compile Include="Loaders\PromotionLoaderTests.cs" />
-    <Compile Include="Model\RelativePricePromotionTests.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\GroceryCo.snk">
       <Link>GroceryCo.snk</Link>
     </None>
-    <None Include="packages.config" />
+    <None Include="App.config" />
+    <None Include="Basket.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="GroceryItems.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Promotions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GroceryCo.Checkout\GroceryCo.Checkout.csproj">
-      <Project>{82379746-9B44-4112-BC6F-636F8C7EAD3B}</Project>
+      <Project>{82379746-9b44-4112-bc6f-636f8c7ead3b}</Project>
       <Name>GroceryCo.Checkout</Name>
     </ProjectReference>
   </ItemGroup>
