@@ -27,6 +27,24 @@ namespace GroceryCo.Checkout.Tests.Loaders
 
 
         [Test]
+        public static void Load_EmptyJson_Succeeds()
+        {
+            // Arrange
+            var json = string.Empty;
+            IEnumerable<IPromotion> promotions = null;
+
+            // Act + Assert
+            Assert.DoesNotThrow(() =>
+            {
+                promotions = PromotionLoader.Load(json, StockItems);
+            });
+
+            Assert.That(promotions, Is.Not.Null);
+            Assert.That(promotions, Is.Empty);
+        }
+
+
+        [Test]
         public static void Load_InvalidJson_Fails()
         {
             // Arrange + Act + Assert
