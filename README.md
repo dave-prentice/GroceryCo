@@ -4,14 +4,14 @@ This sample application simulates a grocery store checkout.
 
 By convention the checkout sample application attempts to load three JSON files on startup:
 
-GroceryItems.json - a list of all items in stock at the shop.
+__GroceryItems.json__ - a list of all items in stock at the shop.
 
 Example:
 ```json
 [{"id": "Apple", "price": 0.50}, {"id": "Orange", "price": 1.0}]
 ```
 
-Basket.json - the contents of a customer's basket.
+__Basket.json__ - the contents of a customer's basket.
 Example:
 ```json
 [
@@ -28,7 +28,7 @@ Example:
 
 and
 
-Promotions.json - The current promotions on offer at the store.
+__Promotions.json__ - The current promotions on offer at the store.
 
 Example:
 ```json
