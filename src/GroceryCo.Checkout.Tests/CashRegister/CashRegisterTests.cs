@@ -17,10 +17,10 @@ namespace GroceryCo.Checkout.Tests.CashRegister
             var register = new Checkout.CashRegister.CashRegister(Enumerable.Empty<IPromotion>());
             var groceryItems = new[]
             {
-                new GroceryItem ("Apples", 1.0m),
-                new GroceryItem ("Apples", 1.0m),
-                new GroceryItem ("Oranges", 2.0m),
-                new GroceryItem ("Oranges", 2.0m),
+                new GroceryItem("Apples", 1.0m),
+                new GroceryItem("Apples", 1.0m),
+                new GroceryItem("Oranges", 2.0m),
+                new GroceryItem("Oranges", 2.0m),
             };
 
             // Act
