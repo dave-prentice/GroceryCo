@@ -1,0 +1,8 @@
+﻿[
+  {
+    "itemId": "Apple",
+    "quantity": 2,
+    "rate": 0.5,
+    "promotionType": "relative"
+  }
+]

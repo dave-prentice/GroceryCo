@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents an item in a customer's basket
     /// </summary>
-    internal sealed class BasketItem
+    public sealed class BasketItem
     {
         /// <summary>
         /// Constructor

@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CashRegister\CashRegister.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Model\BasketItem.cs" />
     <Compile Include="Loaders\BasketItemLoader.cs" />
     <Compile Include="Model\FixedPricePromotion.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Model\ReceiptEntry.cs" />
     <Compile Include="Model\RelativePricePromotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ConsoleReceiptView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GroceryCo.snk" />

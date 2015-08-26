@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace GroceryCo.Checkout.Loaders
 {
-    internal static class BasketItemLoader
+    public static class BasketItemLoader
     {
         /// <summary>
         /// Loads the content of a customer's basket from a JSON representation
