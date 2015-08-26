@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace GroceryCo.Checkout.Tests.CashRegister
 {
     /// <summary>
-    /// Test fixture for the <see cref="CashRegister"/> class including some common scenarios
+    /// Test fixture for the <see cref="CashRegister"/> class covering some common scenarios
     /// </summary>
     internal static class CashRegisterTests
     {
@@ -55,7 +55,6 @@ namespace GroceryCo.Checkout.Tests.CashRegister
             IEnumerable<ReceiptEntry> expectedReceiptEntreEntries)
         {
             // Arrange
-
             var items = GetItems(itemId, quantity, unitPrice).ToList();
 
             var register = new Checkout.CashRegister.CashRegister(promotions);
@@ -79,16 +78,32 @@ namespace GroceryCo.Checkout.Tests.CashRegister
                 1,
                 1.0m,
                 new IPromotion[] {new FixedPricePromotion("Apples", 3, 2.0m)},
-                new [] {new ReceiptEntry(1, "Apples", 1.0m, 1.0m, false)})
+                new [] {new ReceiptEntry(1, "Apples", 1.0m, 1.0m)})
             .SetName("One apple with a '3 for $2' promotion"),
+
+             new TestCaseData(
+                "Apples",
+                1,
+                1.0m,
+                new IPromotion[] {new RelativePricePromotion(GetItem("Apples", 1), 2, 0.5m)},
+                new [] {new ReceiptEntry(1, "Apples", 1.0m, 1.0m)})
+            .SetName("One apple with a 'buy one get one free' promotion"),
 
             new TestCaseData(
                 "Apples",
                 2,
                 1.0m,
                 new IPromotion[] {new FixedPricePromotion("Apples", 3, 2.0m)},
-                new [] {new ReceiptEntry(2, "Apples", 1.0m, 2.0m, false)})
+                new [] {new ReceiptEntry(2, "Apples", 1.0m, 2.0m)})
             .SetName("Two apples with a '3 for $2' promotion"),
+
+            new TestCaseData(
+                "Apples",
+                2,
+                1.0m,
+                new IPromotion[] {new RelativePricePromotion(GetItem("Apples", 1), 2, 0.5m)},
+                new [] {new ReceiptEntry(2, "Apples", 0.5m, 1.0m, true)})
+            .SetName("Two apples with a 'buy one get one free' promotion"),
 
              new TestCaseData(
                 "Apples",
@@ -106,7 +121,7 @@ namespace GroceryCo.Checkout.Tests.CashRegister
                 new []
                 {
                     new ReceiptEntry(3, "Apples", 0.67m, 2.0m, true),
-                    new ReceiptEntry(1, "Apples", 1.0m, 1.0m, false)
+                    new ReceiptEntry(1, "Apples", 1.0m, 1.0m)
                 })
             .SetName("Four apples with a '3 for $2' promotion")
         };
@@ -123,8 +138,20 @@ namespace GroceryCo.Checkout.Tests.CashRegister
         {
             for (var i = 0; i< quantity; i++)
             {
-                yield return new GroceryItem {Id = itemId, Price = unitPrice};
+                yield return GetItem(itemId, unitPrice);
             }
+        }
+
+
+        /// <summary>
+        /// Utility method for generating a single <see cref="GroceryItem"/>
+        /// </summary>
+        /// <param name="itemId">The id of the item to create</param>
+        /// <param name="unitPrice">The unit cost of each item</param>
+        /// <returns></returns>
+        private static GroceryItem GetItem(string itemId, decimal unitPrice)
+        {
+            return new GroceryItem { Id = itemId, Price = unitPrice };
         }
     }
 }
