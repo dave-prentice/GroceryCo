@@ -1,13 +1,12 @@
 ﻿using System.Linq;
 using GroceryCo.Checkout.Loaders;
-using GroceryCo.Checkout.Model;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
-namespace GroceryCo.Checkout.Tests.Model
+namespace GroceryCo.Checkout.Tests.Loaders
 {
     internal static class GroceryItemLoaderTests
-    { 
+    {
         [Test]
         public static void Load_ValidJson_Succeeds()
         {

@@ -5,7 +5,7 @@ using GroceryCo.Checkout.Model;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
-namespace GroceryCo.Checkout.Tests.Model
+namespace GroceryCo.Checkout.Tests.Loaders
 {
     internal static class PromotionLoaderTests
     {
