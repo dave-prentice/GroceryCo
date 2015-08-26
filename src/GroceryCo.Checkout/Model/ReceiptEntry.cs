@@ -55,7 +55,7 @@
 
         public override bool Equals(object obj)
         {
-            return obj is ReceiptEntry ? this.Equals((ReceiptEntry)obj) : base.Equals(obj);
+            return obj is ReceiptEntry && Equals((ReceiptEntry)obj);
         }
 
         private bool Equals(ReceiptEntry other)
@@ -68,7 +68,7 @@
             unchecked
             {
                 var hashCode = Quantity;
-                hashCode = (hashCode*397) ^ (ItemDescription != null ? ItemDescription.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ (ItemDescription?.GetHashCode() ?? 0);
                 hashCode = (hashCode*397) ^ UnitPrice.GetHashCode();
                 hashCode = (hashCode*397) ^ TotalPrice.GetHashCode();
                 hashCode = (hashCode*397) ^ Promotion.GetHashCode();
