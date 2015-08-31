@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GroceryCo.Checkout.CashRegisters;
 using GroceryCo.Checkout.Model;
 using NUnit.Framework;
 
-namespace GroceryCo.Checkout.Tests.CashRegister
+namespace GroceryCo.Checkout.Tests.CashRegisters
 {
     /// <summary>
     /// Test fixture for the <see cref="CashRegister"/> class covering some common scenarios
@@ -14,7 +15,7 @@ namespace GroceryCo.Checkout.Tests.CashRegister
         public static void Process_MultipleItemTypesNoPromotions_CorrectReceiptEntriesMade()
         {
             // Arrange
-            var register = new Checkout.CashRegister.CashRegister(Enumerable.Empty<IPromotion>());
+            var register = new CashRegister(Enumerable.Empty<IPromotion>());
             var groceryItems = new[]
             {
                 new GroceryItem("Apples", 1.0m),
@@ -56,7 +57,7 @@ namespace GroceryCo.Checkout.Tests.CashRegister
             // Arrange
             var items = GetItems(itemId, quantity, unitPrice).ToList();
 
-            var register = new Checkout.CashRegister.CashRegister(promotions);
+            var register = new CashRegister(promotions);
 
             // Act
             var actualReceiptEntries = register.Process(items).ToArray();
@@ -71,7 +72,6 @@ namespace GroceryCo.Checkout.Tests.CashRegister
         /// </summary>
         private static readonly TestCaseData[] TestData =
         {
-
             new TestCaseData(
                 "Apples",
                 1,
