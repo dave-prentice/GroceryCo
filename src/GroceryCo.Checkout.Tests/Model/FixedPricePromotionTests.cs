@@ -23,7 +23,7 @@ namespace GroceryCo.Checkout.Tests.Model
         }
 
 
-        private static readonly TestCaseData[] TestCases = new[]
+        private static readonly TestCaseData[] TestCases =
         {
             new TestCaseData(2, 3.0m, 1.5m, "foo")
                 .SetName("Two for $3"),

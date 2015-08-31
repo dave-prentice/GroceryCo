@@ -17,7 +17,9 @@ namespace GroceryCo.Checkout.Views
         public void Render(IEnumerable<ReceiptEntry> receiptEntries)
         {
             var enumeratedEntries = receiptEntries as ReceiptEntry[] ?? receiptEntries.ToArray();
-            var receiptTotal = enumeratedEntries.Sum(e => e.TotalPrice);
+
+            // Compute the total amount of the receipt
+            var receiptTotal = GetReceiptTotoal(enumeratedEntries);
 
             foreach (var entry in enumeratedEntries)
             {
@@ -44,6 +46,17 @@ namespace GroceryCo.Checkout.Views
             // Compute and render the total amount
             var totalEntry = $"${receiptTotal.ToString("N2")}";
             Console.WriteLine(string.Concat("Total".PadRight(ReceiptWidth - totalEntry.Length), totalEntry));
+        }
+
+
+        /// <summary>
+        /// Computes the receipt toal for a given sequence of <see cref="ReceiptEntry"/> objects
+        /// </summary>
+        /// <param name="receiptEntries">The <see cref="ReceiptEntry"/> objects for which the total is being calculated</param>
+        /// <returns>The receipt total</returns>
+        internal static decimal GetReceiptTotoal(IEnumerable<ReceiptEntry> receiptEntries)
+        {
+            return receiptEntries.Sum(e => e.TotalPrice);
         }
 
 

@@ -69,60 +69,60 @@ namespace GroceryCo.Checkout.Tests.CashRegister
         /// <summary>
         /// Test data to exercise the CashRegister class wth various promotional offers
         /// </summary>
-        private static readonly TestCaseData[] TestData = new[]
+        private static readonly TestCaseData[] TestData =
         {
-            
+
             new TestCaseData(
                 "Apples",
                 1,
                 1.0m,
                 new IPromotion[] {new FixedPricePromotion("Apples", 3, 2.0m)},
-                new [] {new ReceiptEntry(1, "Apples", 1.0m, 1.0m)})
-            .SetName("One apple with a '3 for $2' promotion"),
+                new[] {new ReceiptEntry(1, "Apples", 1.0m, 1.0m)})
+                .SetName("One apple with a '3 for $2' promotion"),
 
-             new TestCaseData(
+            new TestCaseData(
                 "Apples",
                 1,
                 1.0m,
                 new IPromotion[] {new RelativePricePromotion(GetItem("Apples", 1), 2, 0.5m)},
-                new [] {new ReceiptEntry(1, "Apples", 1.0m, 1.0m)})
-            .SetName("One apple with a 'buy one get one free' promotion"),
+                new[] {new ReceiptEntry(1, "Apples", 1.0m, 1.0m)})
+                .SetName("One apple with a 'buy one get one free' promotion"),
 
             new TestCaseData(
                 "Apples",
                 2,
                 1.0m,
                 new IPromotion[] {new FixedPricePromotion("Apples", 3, 2.0m)},
-                new [] {new ReceiptEntry(2, "Apples", 1.0m, 2.0m)})
-            .SetName("Two apples with a '3 for $2' promotion"),
+                new[] {new ReceiptEntry(2, "Apples", 1.0m, 2.0m)})
+                .SetName("Two apples with a '3 for $2' promotion"),
 
             new TestCaseData(
                 "Apples",
                 2,
                 1.0m,
                 new IPromotion[] {new RelativePricePromotion(GetItem("Apples", 1), 2, 0.5m)},
-                new [] {new ReceiptEntry(2, "Apples", 0.5m, 1.0m, true)})
-            .SetName("Two apples with a 'buy one get one free' promotion"),
+                new[] {new ReceiptEntry(2, "Apples", 0.5m, 1.0m, true)})
+                .SetName("Two apples with a 'buy one get one free' promotion"),
 
-             new TestCaseData(
+            new TestCaseData(
                 "Apples",
                 3,
                 1.0m,
                 new IPromotion[] {new FixedPricePromotion("Apples", 3, 2.0m)},
-                new [] {new ReceiptEntry(3, "Apples", 0.67m, 2.0m, true)})
-            .SetName("Three apples with a '3 for $2' promotion"),
+                new[] {new ReceiptEntry(3, "Apples", 0.67m, 2.0m, true)})
+                .SetName("Three apples with a '3 for $2' promotion"),
 
-             new TestCaseData(
+            new TestCaseData(
                 "Apples",
                 4,
                 1.0m,
                 new IPromotion[] {new FixedPricePromotion("Apples", 3, 2.0m)},
-                new []
+                new[]
                 {
                     new ReceiptEntry(3, "Apples", 0.67m, 2.0m, true),
                     new ReceiptEntry(1, "Apples", 1.0m, 1.0m)
                 })
-            .SetName("Four apples with a '3 for $2' promotion")
+                .SetName("Four apples with a '3 for $2' promotion")
         };
 
 

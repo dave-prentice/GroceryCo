@@ -61,6 +61,7 @@
     <Compile Include="Loaders\PromotionLoaderTests.cs" />
     <Compile Include="Model\RelativePricePromotionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ConsoleReceiptViewTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\GroceryCo.snk">

@@ -32,7 +32,7 @@ namespace GroceryCo.Checkout.Tests.Model
         private static readonly GroceryItem TestItem = new GroceryItem("Apples", 1.0m);
 
 
-        private static readonly TestCaseData[] TestCases = new []
+        private static readonly TestCaseData[] TestCases =
         {
             new TestCaseData(2, 0.75m, TestItem, 1.5m, 0.75m, TestItem.Id)
                 .SetName("Buy one Get one half price"),
