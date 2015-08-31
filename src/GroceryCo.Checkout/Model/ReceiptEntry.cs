@@ -53,27 +53,43 @@
         public bool Promotion { get; }
 
 
+        /// <summary>
+        /// Deterines whether an instance of an object is equal to another
+        /// </summary>
+        /// <param name="obj">The object being compared to</param>
+        /// <returns>True if the objects being compared are considered equal</returns>
         public override bool Equals(object obj)
         {
             return obj is ReceiptEntry && Equals((ReceiptEntry)obj);
         }
 
-        private bool Equals(ReceiptEntry other)
-        {
-            return Quantity == other.Quantity && string.Equals(ItemDescription, other.ItemDescription) && UnitPrice == other.UnitPrice && TotalPrice == other.TotalPrice && Promotion == other.Promotion;
-        }
 
+        /// <summary>
+        /// Serves as the default hash function. Implementation courtesy of Resharper
+        /// </summary>
+        /// <returns>An iteger representing the hash code of the given object</returns>
         public override int GetHashCode()
         {
             unchecked
             {
                 var hashCode = Quantity;
-                hashCode = (hashCode*397) ^ (ItemDescription?.GetHashCode() ?? 0);
-                hashCode = (hashCode*397) ^ UnitPrice.GetHashCode();
-                hashCode = (hashCode*397) ^ TotalPrice.GetHashCode();
-                hashCode = (hashCode*397) ^ Promotion.GetHashCode();
+                hashCode = (hashCode * 397) ^ (ItemDescription?.GetHashCode() ?? 0);
+                hashCode = (hashCode * 397) ^ UnitPrice.GetHashCode();
+                hashCode = (hashCode * 397) ^ TotalPrice.GetHashCode();
+                hashCode = (hashCode * 397) ^ Promotion.GetHashCode();
                 return hashCode;
             }
+        }
+
+
+        /// <summary>
+        /// Determines whether the specified object is equal to the current object. Implementation courtesy of Resharper
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns>true if the specified object is equal to the current object; otherwise, false.</returns>
+        private bool Equals(ReceiptEntry other)
+        {
+            return Quantity == other.Quantity && string.Equals(ItemDescription, other.ItemDescription) && UnitPrice == other.UnitPrice && TotalPrice == other.TotalPrice && Promotion == other.Promotion;
         }
     }
 }

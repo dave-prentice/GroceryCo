@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using GroceryCo.Checkout.Model;
 
-namespace GroceryCo.Checkout.CashRegister
+namespace GroceryCo.Checkout.CashRegisters
 {
     /// <summary>
     /// Implementation of a checkout algorithm using a Greedy approach
@@ -21,7 +21,7 @@ namespace GroceryCo.Checkout.CashRegister
 
         /// <summary>
         /// Processes the content of the basket and generates entries to be included
-        /// on a receipt. 
+        /// on a receipt.
         /// </summary>
         /// <param name="basketContent">the sequence of <see cref="GroceryItem"/> objects to be processed</param>
         /// <returns>A sequence of <see cref="ReceiptEntry"/> objects for inclusion in a receipt</returns>

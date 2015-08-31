@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CashRegister\CashRegister.cs" />
+    <Compile Include="CashRegisters\CashRegister.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Model\BasketItem.cs" />
     <Compile Include="Loaders\BasketItemLoader.cs" />
