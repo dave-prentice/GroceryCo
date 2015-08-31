@@ -19,13 +19,13 @@
 
 
         /// <summary>
-        /// The computed total price of Quantity units of the specified item
+        /// The computed total price of <see cref="Quantity"/> units of the specified item
         /// </summary>
         decimal Price { get; }
 
 
         /// <summary>
-        /// The price of one unit of <see cref="GroceryItem"/> accoriding to teh given promotion
+        /// The price of one unit of <see cref="GroceryItem"/> according to the given promotion
         /// </summary>
         decimal UnitPrice { get; }
     }

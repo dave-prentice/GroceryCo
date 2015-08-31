@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using GroceryCo.Checkout.CashRegisters;
 using GroceryCo.Checkout.Model;
 using GroceryCo.Checkout.Views;
 
@@ -27,11 +28,10 @@ namespace GroceryCo.Checkout.Controllers
         /// Checks out each item in the basket, taking into account any
         /// promotions available
         /// </summary>
-        /// <param name="basket"></param>
         public void Checkout(IEnumerable<BasketItem> basket)
         {
             // Use the CashRegister to computethe receipt entries
-            var register = new CashRegister.CashRegister(_promotions);
+            var register = new CashRegister(_promotions);
 
             //Lookup prices for all the grocery items in the basket
             var groceryItems = basket.Select(i => _priceList[i.Id]);
