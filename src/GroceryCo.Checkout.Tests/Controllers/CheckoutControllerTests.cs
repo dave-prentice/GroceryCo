@@ -39,7 +39,6 @@ namespace GroceryCo.Checkout.Tests.Controllers
 
             // Assert
             CollectionAssert.AreEqual(view.ReceiptEntries, expectedReceiptEntries);
-
         }
 
 
