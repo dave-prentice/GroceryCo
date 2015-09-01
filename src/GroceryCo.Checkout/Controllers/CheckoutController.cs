@@ -28,7 +28,8 @@ namespace GroceryCo.Checkout.Controllers
         /// Checks out each item in the basket, taking into account any
         /// promotions available
         /// </summary>
-        public void Checkout(IEnumerable<BasketItem> basket)
+        /// <returns>an <see cref="IReceiptView"/> instance representing the view to be rendered</returns>
+        public IReceiptView Checkout(IEnumerable<BasketItem> basket)
         {
             // Use the CashRegister to computethe receipt entries
             var register = new CashRegister(_promotions);
@@ -40,7 +41,7 @@ namespace GroceryCo.Checkout.Controllers
             var receiptEntries = register.Process(groceryItems);
 
             // Instantiate the view and render it
-            new ConsoleReceiptView().Render(receiptEntries);
+            return new ConsoleReceiptView(receiptEntries);
         }
 
 
