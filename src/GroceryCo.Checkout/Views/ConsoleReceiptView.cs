@@ -8,18 +8,35 @@ namespace GroceryCo.Checkout.Views
     /// <summary>
     /// A view which renders a collection or <see cref="ReceiptEntry"/> objects to the console
     /// </summary>
-    internal sealed class ConsoleReceiptView
+    internal sealed class ConsoleReceiptView : IReceiptView
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="receiptEntries">The <see cref="ReceiptEntry"/> objects to be rendered in the view</param>
+        public ConsoleReceiptView(IEnumerable<ReceiptEntry> receiptEntries)
+        {
+            if (receiptEntries == null) { throw new ArgumentNullException(nameof(receiptEntries));}
+
+            ReceiptEntries = receiptEntries;
+        }
+
+
+        /// <summary>
+        /// The sequence of <see cref="ReceiptEntries"/> which will be rendered
+        /// </summary>
+        public IEnumerable<ReceiptEntry> ReceiptEntries { get; }
+
+
         /// <summary>
         /// Renders a collection of <see cref="ReceiptEntry"/> objects to the console
         /// </summary>
-        /// <param name="receiptEntries"></param>
-        public void Render(IEnumerable<ReceiptEntry> receiptEntries)
+        public void Render()
         {
-            var enumeratedEntries = receiptEntries as ReceiptEntry[] ?? receiptEntries.ToArray();
+            var enumeratedEntries = ReceiptEntries as ReceiptEntry[] ?? ReceiptEntries.ToArray();
 
             // Compute the total amount of the receipt
-            var receiptTotal = GetReceiptTotoal(enumeratedEntries);
+            var receiptTotal = GetReceiptTotal(enumeratedEntries);
 
             foreach (var entry in enumeratedEntries)
             {
@@ -54,7 +71,7 @@ namespace GroceryCo.Checkout.Views
         /// </summary>
         /// <param name="receiptEntries">The <see cref="ReceiptEntry"/> objects for which the total is being calculated</param>
         /// <returns>The receipt total</returns>
-        internal static decimal GetReceiptTotoal(IEnumerable<ReceiptEntry> receiptEntries)
+        internal static decimal GetReceiptTotal(IEnumerable<ReceiptEntry> receiptEntries)
         {
             return receiptEntries.Sum(e => e.TotalPrice);
         }

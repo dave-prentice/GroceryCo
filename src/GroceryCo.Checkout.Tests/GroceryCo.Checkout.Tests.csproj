@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CashRegisters\CashRegisterTests.cs" />
+    <Compile Include="Controllers\CheckoutControllerTests.cs" />
     <Compile Include="Loaders\BasketItemLoaderTests.cs" />
     <Compile Include="Model\FixedPricePromotionTests.cs" />
     <Compile Include="Loaders\GroceryItemLoaderTests.cs" />

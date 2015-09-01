@@ -63,7 +63,7 @@ namespace GroceryCo.Checkout.Tests.CashRegisters
             var actualReceiptEntries = register.Process(items).ToArray();
 
             // Assert
-            CollectionAssert.AreEquivalent(actualReceiptEntries, expectedReceiptEntreEntries);
+            CollectionAssert.AreEqual(actualReceiptEntries, expectedReceiptEntreEntries);
         }
 
 

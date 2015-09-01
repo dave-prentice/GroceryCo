@@ -17,9 +17,14 @@ namespace GroceryCo.Console
 
             var basket = BasketItemLoader.Load(File.ReadAllText(".\\Basket.json"));
 
-            //Instantiate the controller and execute the checkout
+            // Instantiate the controller
             var controller = new CheckoutController(priceList, promotions);
-            controller.Checkout(basket);
+
+            // Checkout the items
+            var view = controller.Checkout(basket);
+
+            // Render the view
+            view.Render();
 
             System.Console.WriteLine("Press a key to continue");
             System.Console.ReadKey();
